@@ -1,16 +1,12 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
 import { notFound } from "next/navigation";
-
-// TODO: ちゃんと型が決まったら修正する
-interface tmpField {
-  name: string;
-}
+import { Booking, Guest, GuestInsert } from "../_types/models";
 
 /////////////
 // GET
 
-export async function getCabin(id: string) {
+export async function getCabin(id: number) {
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
@@ -18,7 +14,7 @@ export async function getCabin(id: string) {
     .single();
 
   // For testing
-  // await new Promise((res) => setTimeout(res, 2000));
+  await new Promise((res) => setTimeout(res, 2000));
 
   if (error) {
     console.error(error);
@@ -159,7 +155,7 @@ export async function getCountries() {
 /////////////
 // CREATE
 
-export async function createGuest(newGuest: tmpField) {
+export async function createGuest(newGuest: GuestInsert) {
   const { data, error } = await supabase.from("guests").insert([newGuest]);
 
   if (error) {
@@ -170,7 +166,7 @@ export async function createGuest(newGuest: tmpField) {
   return data;
 }
 
-export async function createBooking(newBooking: tmpField) {
+export async function createBooking(newBooking: Booking) {
   const { data, error } = await supabase
     .from("bookings")
     .insert([newBooking])
@@ -190,7 +186,7 @@ export async function createBooking(newBooking: tmpField) {
 // UPDATE
 
 // The updatedFields is an object which should ONLY contain the updated data
-export async function updateGuest(id: string, updatedFields: tmpField) {
+export async function updateGuest(id: string, updatedFields: Guest) {
   const { data, error } = await supabase
     .from("guests")
     .update(updatedFields)
@@ -205,7 +201,7 @@ export async function updateGuest(id: string, updatedFields: tmpField) {
   return data;
 }
 
-export async function updateBooking(id: string, updatedFields: tmpField) {
+export async function updateBooking(id: string, updatedFields: Booking) {
   const { data, error } = await supabase
     .from("bookings")
     .update(updatedFields)

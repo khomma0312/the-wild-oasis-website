@@ -14,16 +14,16 @@ export type Database = {
           cabinId: number | null
           cabinPrice: number | null
           created_at: string
-          endDate: string | null
+          endDate: string
           extrasPrice: number | null
           guestId: number | null
           hasBreakfast: boolean | null
           id: number
           isPaid: boolean | null
-          numGuests: number | null
-          numNights: number | null
+          numGuests: number
+          numNights: number
           observations: string | null
-          startDate: string | null
+          startDate: string
           status: string | null
           totalPrice: number | null
         }
@@ -31,16 +31,16 @@ export type Database = {
           cabinId?: number | null
           cabinPrice?: number | null
           created_at?: string
-          endDate?: string | null
+          endDate: string
           extrasPrice?: number | null
           guestId?: number | null
           hasBreakfast?: boolean | null
           id?: number
           isPaid?: boolean | null
-          numGuests?: number | null
-          numNights?: number | null
+          numGuests: number
+          numNights: number
           observations?: string | null
-          startDate?: string | null
+          startDate: string
           status?: string | null
           totalPrice?: number | null
         }
@@ -48,16 +48,16 @@ export type Database = {
           cabinId?: number | null
           cabinPrice?: number | null
           created_at?: string
-          endDate?: string | null
+          endDate?: string
           extrasPrice?: number | null
           guestId?: number | null
           hasBreakfast?: boolean | null
           id?: number
           isPaid?: boolean | null
-          numGuests?: number | null
-          numNights?: number | null
+          numGuests?: number
+          numNights?: number
           observations?: string | null
-          startDate?: string | null
+          startDate?: string
           status?: string | null
           totalPrice?: number | null
         }
@@ -81,33 +81,33 @@ export type Database = {
       cabins: {
         Row: {
           created_at: string
-          description: string | null
+          description: string
           discount: number | null
           id: number
           image: string
-          maxCapacity: number | null
-          name: string | null
-          regularPrice: number | null
+          maxCapacity: number
+          name: string
+          regularPrice: number
         }
         Insert: {
           created_at?: string
-          description?: string | null
+          description?: string
           discount?: number | null
           id?: number
           image?: string
-          maxCapacity?: number | null
-          name?: string | null
-          regularPrice?: number | null
+          maxCapacity: number
+          name: string
+          regularPrice: number
         }
         Update: {
           created_at?: string
-          description?: string | null
+          description?: string
           discount?: number | null
           id?: number
           image?: string
-          maxCapacity?: number | null
-          name?: string | null
-          regularPrice?: number | null
+          maxCapacity?: number
+          name?: string
+          regularPrice?: number
         }
         Relationships: []
       }
@@ -115,8 +115,8 @@ export type Database = {
         Row: {
           countryFlag: string | null
           created_at: string
-          email: string | null
-          fullName: string | null
+          email: string
+          fullName: string
           id: number
           nationalID: string | null
           nationality: string | null
@@ -124,8 +124,8 @@ export type Database = {
         Insert: {
           countryFlag?: string | null
           created_at?: string
-          email?: string | null
-          fullName?: string | null
+          email: string
+          fullName: string
           id?: number
           nationalID?: string | null
           nationality?: string | null
@@ -133,8 +133,8 @@ export type Database = {
         Update: {
           countryFlag?: string | null
           created_at?: string
-          email?: string | null
-          fullName?: string | null
+          email?: string
+          fullName?: string
           id?: number
           nationalID?: string | null
           nationality?: string | null
@@ -143,28 +143,28 @@ export type Database = {
       }
       settings: {
         Row: {
-          breakfastPrice: number | null
+          breakfastPrice: number
           created_at: string
           id: number
-          maxBookingLength: number | null
-          maxGuestsPerBooking: number | null
-          minBookingLength: number | null
+          maxBookingLength: number
+          maxGuestsPerBooking: number
+          minBookingLength: number
         }
         Insert: {
-          breakfastPrice?: number | null
+          breakfastPrice: number
           created_at?: string
           id?: number
-          maxBookingLength?: number | null
-          maxGuestsPerBooking?: number | null
-          minBookingLength?: number | null
+          maxBookingLength: number
+          maxGuestsPerBooking: number
+          minBookingLength: number
         }
         Update: {
-          breakfastPrice?: number | null
+          breakfastPrice?: number
           created_at?: string
           id?: number
-          maxBookingLength?: number | null
-          maxGuestsPerBooking?: number | null
-          minBookingLength?: number | null
+          maxBookingLength?: number
+          maxGuestsPerBooking?: number
+          minBookingLength?: number
         }
         Relationships: []
       }
