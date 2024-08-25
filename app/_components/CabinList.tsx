@@ -1,8 +1,18 @@
+import { StaticImageData } from "next/image";
 import { getCabins } from "../_lib/data-service";
 import CabinCard, { Cabin } from "./CabinCard";
 
+interface CabinList {
+  id: any;
+  name: any;
+  maxCapacity: any;
+  regularPrice: any;
+  discount: any;
+  image: any;
+}
+
 async function CabinList({ filter }: { filter: string }) {
-  const cabins: Cabin[] = await getCabins();
+  const cabins: CabinList[] = await getCabins();
 
   if (!cabins.length) return null;
 

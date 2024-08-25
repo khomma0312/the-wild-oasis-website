@@ -1,8 +1,7 @@
 import { getBookedDatesByCabinId, getCabin } from "@/app/_lib/data-service";
-import { NextApiRequest } from "next";
 
 export async function GET(
-  request: NextApiRequest,
+  request: Request,
   { params }: { params: { cabinId: string } }
 ) {
   const cabinId = parseInt(params.cabinId);

@@ -3,10 +3,11 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { format } from "date-fns";
 import { initialRange, useReservationRange } from "../_store/reservation";
+import { useReservation } from "./ReservationContext";
 
 function ReservationReminder() {
   // CHANGE
-  const [range, setRange] = useReservationRange();
+  const { range, resetRange } = useReservation();
 
   if (!range.from || !range.to) return null;
 
@@ -19,7 +20,7 @@ function ReservationReminder() {
       </p>
       <button
         className="rounded-full p-1 hover:bg-accent-600 transition-all"
-        onClick={() => setRange(initialRange)}
+        onClick={() => resetRange()}
       >
         <XMarkIcon className="h-5 w-5" />
       </button>

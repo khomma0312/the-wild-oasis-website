@@ -6,3 +6,5 @@ export type Guest = Database["public"]["Tables"]["guests"]["Row"];
 export type Settings = Database["public"]["Tables"]["settings"]["Row"];
 
 export type GuestInsert = Database["public"]["Tables"]["guests"]["Insert"];
+export type BookingUpdate = Database["public"]["Tables"]["bookings"]["Update"];
+export type BookingInsert = Database["public"]["Tables"]["bookings"]["Insert"];
