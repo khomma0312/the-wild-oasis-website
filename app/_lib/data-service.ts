@@ -21,7 +21,7 @@ export async function getCabin(id: number | null) {
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
-    .eq("id", id)
+    .eq("id", id || 0)
     .single();
 
   // For testing
