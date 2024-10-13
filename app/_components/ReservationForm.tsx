@@ -4,7 +4,7 @@ import { User } from "next-auth";
 import { initialRange, useReservationRange } from "../_store/reservation";
 import { Cabin } from "../_types/models";
 import { differenceInDays } from "date-fns";
-import { createBooking } from "../_lib/actions";
+import { createBooking } from "#app/actions";
 import { useReservation } from "./ReservationContext";
 import SubmitButton from "./SubmitButton";
 

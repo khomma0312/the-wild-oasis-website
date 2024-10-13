@@ -19,9 +19,15 @@ const ReservationContext = createContext(
   }
 );
 
-const initialState = { from: undefined, to: undefined };
+const defaultState = { from: undefined, to: undefined };
 
-function ReservationProvider({ children }: { children: ReactNode }) {
+function ReservationProvider({
+  children,
+  initialState = defaultState,
+}: {
+  children: ReactNode;
+  initialState?: DateRange;
+}) {
   const [range, setRange] = useState<DateRange>(initialState);
   const resetRange = () => setRange(initialState);
 
